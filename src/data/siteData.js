@@ -172,7 +172,7 @@ export const blogPosts = [
 
 export const stats = [
   { number: '500+', label: 'Dự án hoàn thành' },
-  { number: '15+', label: 'Năm kinh nghiệm' },
+  { number: '20+', label: 'Năm kinh nghiệm' },
   { number: '50+', label: 'Chuyên gia NDT' },
   { number: '99%', label: 'Khách hàng hài lòng' },
 ]

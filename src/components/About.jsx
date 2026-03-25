@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom'
+import { translations } from '../data/translations'
+import { useLang, t } from '../context/LanguageContext'
 
 export default function About() {
+  const { lang } = useLang()
+  const a = translations.about
+
   return (
     <section id="about" className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,35 +20,30 @@ export default function About() {
                 loading="lazy"
               />
             </div>
-            {/* Floating card */}
             <div className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-xl shadow-xl hidden md:block">
-              <div className="text-3xl font-bold">15+</div>
-              <div className="text-sm text-white/80">Năm kinh nghiệm</div>
+              <div className="text-3xl font-bold">20+</div>
+              <div className="text-sm text-white/80">{lang === 'vi' ? 'Năm kinh nghiệm' : 'Years Experience'}</div>
             </div>
           </div>
 
           {/* Text Content */}
           <div>
-            <div className="inline-flex items-center px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-6">
-              Về chúng tôi
+            <div className="inline-flex items-center px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+              {t(a.tag, lang)}
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-              Đối tác tin cậy trong{' '}
-              <span className="text-primary">kiểm định công nghiệp</span>
+              {t(a.title1, lang)}{' '}
+              <span className="text-primary">{t(a.titleHighlight, lang)}</span>
             </h2>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              {t(a.description, lang)}
+            </p>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              Alpha NDT là đơn vị hàng đầu trong lĩnh vực kiểm tra không phá hủy (NDT) tại Việt Nam.
-              Với đội ngũ chuyên gia giàu kinh nghiệm và hệ thống thiết bị hiện đại, chúng tôi cung cấp
-              các giải pháp kiểm định toàn diện cho ngành dầu khí, năng lượng, hạ tầng và công nghiệp nặng.
+              {t(a.mission, lang)}
             </p>
 
             <div className="space-y-4 mb-8">
-              {[
-                'Đội ngũ chuyên gia Level II, III được chứng nhận ASNT, PCN',
-                'Công nghệ kiểm tra tiên tiến: PAUT, TOFD, Digital RT',
-                'Tuân thủ tiêu chuẩn quốc tế ASME, API, AWS, EN, ISO',
-                'Hệ thống quản lý chất lượng ISO 9001:2015',
-              ].map((item, i) => (
+              {t(a.bullets, lang).map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5 shrink-0">
                     <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,9 +57,9 @@ export default function About() {
 
             <Link
               to="/services"
-              className="inline-flex items-center text-secondary font-semibold hover:text-blue-700 transition-colors"
+              className="inline-flex items-center text-primary font-semibold hover:text-primary-dark transition-colors"
             >
-              Tìm hiểu thêm về dịch vụ
+              {t(a.learnMore, lang)}
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
