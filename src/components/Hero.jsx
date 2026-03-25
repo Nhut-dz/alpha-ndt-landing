@@ -28,7 +28,7 @@ export default function Hero() {
         >
           {/* Fallback to poster image */}
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-primary/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/85 to-gray-800/75" />
       </div>
 
       {/* Content */}
@@ -41,7 +41,7 @@ export default function Hero() {
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             {t(h.title1, lang)}{' '}
-            <span className="text-accent">{t(h.titleHighlight, lang)}</span>{' '}
+            <span className="text-primary">{t(h.titleHighlight, lang)}</span>{' '}
             {t(h.title2, lang)}
           </h1>
 

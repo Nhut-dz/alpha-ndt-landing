@@ -26,7 +26,7 @@ const icons = {
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 lg:py-28 bg-primary relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-gray-900 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
