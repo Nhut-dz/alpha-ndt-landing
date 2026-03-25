@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { navLinks } from '../data/siteData'
+import { navLinks, companyInfo } from '../data/siteData'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -28,12 +28,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">α</span>
-            </div>
-            <span className={`font-bold text-xl tracking-tight ${showSolid ? 'text-primary' : 'text-white'}`}>
-              Alpha NDT
-            </span>
+            <img
+              src={companyInfo.logo}
+              alt="Alpha NDT Logo"
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}

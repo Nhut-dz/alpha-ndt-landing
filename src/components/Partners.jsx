@@ -5,21 +5,29 @@ export default function Partners() {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Đối tác & Khách hàng</h2>
-          <p className="text-gray-500">Tin tưởng bởi các tập đoàn hàng đầu</p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Đối tác & Chứng nhận</h2>
+          <p className="text-gray-500">Được chấp nhận bởi các tổ chức phân cấp quốc tế</p>
         </div>
 
-        {/* Logo slider - simple CSS animation */}
+        {/* Logo slider */}
         <div className="relative overflow-hidden">
           <div className="flex animate-scroll gap-12 items-center">
             {[...partners, ...partners].map((partner, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 w-32 h-20 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-shadow"
+                className="flex-shrink-0 w-40 h-24 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center p-4 hover:shadow-md transition-shadow"
+                title={partner.name}
               >
-                <span className="text-xl font-bold text-gray-400 hover:text-primary transition-colors">
-                  {partner.logo}
-                </span>
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="max-h-14 max-w-full object-contain grayscale hover:grayscale-0 transition-all"
+                  loading="lazy"
+                  onError={(e) => {
+                    e.target.style.display = 'none'
+                    e.target.parentElement.innerHTML = `<span class="text-lg font-bold text-gray-400">${partner.name}</span>`
+                  }}
+                />
               </div>
             ))}
           </div>

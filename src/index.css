@@ -2,10 +2,10 @@
 
 @theme {
   --font-sans: 'Inter', 'Poppins', system-ui, sans-serif;
-  --color-primary: #0a2463;
-  --color-primary-light: #1e3a8a;
-  --color-primary-dark: #061539;
-  --color-secondary: #3b82f6;
+  --color-primary: #ea580c;
+  --color-primary-light: #f97316;
+  --color-primary-dark: #c2410c;
+  --color-secondary: #d97706;
   --color-accent: #f59e0b;
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;

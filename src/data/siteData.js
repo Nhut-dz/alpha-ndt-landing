@@ -2,10 +2,12 @@
 
 export const companyInfo = {
   name: 'Alpha NDT',
-  fullName: 'Công ty TNHH Kiểm định Alpha NDT',
-  phone: '(028) 1234 5678',
+  fullName: 'Alpha NDT Joint Stock Company',
+  logo: 'http://www.alpha-ndt.com/App_Themes/Images/logo_ndt.png',
+  phone: '+84 28 66877778',
+  fax: '+84 28 66877788',
   email: 'info@alpha-ndt.com',
-  address: 'Lô A1, KCN Biên Hòa 2, TP. Biên Hòa, Đồng Nai',
+  address: 'No. 37/7, Road C18, Bay Hien Ward, Ho Chi Minh City, S. R. Vietnam',
   website: 'www.alpha-ndt.com',
   socials: {
     facebook: '#',
@@ -110,14 +112,12 @@ export const projects = [
 ]
 
 export const partners = [
-  { name: 'PetroVietnam', logo: 'PV' },
-  { name: 'EVN', logo: 'EVN' },
-  { name: 'Vietsovpetro', logo: 'VSP' },
-  { name: 'Doosan Vina', logo: 'DV' },
-  { name: 'Samsung E&C', logo: 'SEC' },
-  { name: 'Hyundai E&C', logo: 'HEC' },
-  { name: 'PTSC', logo: 'PTSC' },
-  { name: 'Lilama', logo: 'LLM' },
+  { name: 'ABS', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/American_Bureau_of_Shipping_logo.svg/200px-American_Bureau_of_Shipping_logo.svg.png' },
+  { name: 'Bureau Veritas', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Bureau_Veritas_logo.svg/200px-Bureau_Veritas_logo.svg.png' },
+  { name: 'ClassNK', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/ClassNK_logo.svg/200px-ClassNK_logo.svg.png' },
+  { name: 'DNV', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/DNV_logo.svg/200px-DNV_logo.svg.png' },
+  { name: 'Korean Register', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Korean_Register_logo.svg/200px-Korean_Register_logo.svg.png' },
+  { name: 'Vietnam Register', logo: 'https://upload.wikimedia.org/wikipedia/vi/thumb/5/5c/Vietnam_Register_logo.svg/200px-Vietnam_Register_logo.svg.png' },
 ]
 
 export const whyChooseUs = [

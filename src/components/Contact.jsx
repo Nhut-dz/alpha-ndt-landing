@@ -48,8 +48,20 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 mb-1">Điện thoại</h4>
+                <h4 className="font-semibold text-gray-900 mb-1">Telephone</h4>
                 <p className="text-gray-600 text-sm">{companyInfo.phone}</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center shrink-0">
+                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-1">Fax</h4>
+                <p className="text-gray-600 text-sm">{companyInfo.fax}</p>
               </div>
             </div>
 
@@ -60,7 +72,7 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
+                <h4 className="font-semibold text-gray-900 mb-1">E-mail</h4>
                 <p className="text-gray-600 text-sm">{companyInfo.email}</p>
               </div>
             </div>

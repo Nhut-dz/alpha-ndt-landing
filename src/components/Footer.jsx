@@ -9,10 +9,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">α</span>
-              </div>
-              <span className="font-bold text-xl">Alpha NDT</span>
+              <img src={companyInfo.logo} alt="Alpha NDT Logo" className="h-12 w-auto" />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               {companyInfo.fullName} — Đối tác tin cậy trong kiểm tra không phá hủy và kiểm định công nghiệp.
@@ -65,8 +62,9 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-6">Liên hệ</h4>
             <div className="space-y-4 text-sm text-gray-400">
               <p>{companyInfo.address}</p>
-              <p>{companyInfo.phone}</p>
-              <p>{companyInfo.email}</p>
+              <p>Telephone: {companyInfo.phone}</p>
+              <p>Fax: {companyInfo.fax}</p>
+              <p>E-mail: {companyInfo.email}</p>
               <p>Thứ Hai - Thứ Bảy: 7:30 - 17:00</p>
             </div>
           </div>
