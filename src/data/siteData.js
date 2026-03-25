@@ -33,36 +33,42 @@ export const services = [
     icon: 'ut',
     title: 'Kiểm tra siêu âm (UT)',
     description: 'Phát hiện khuyết tật bên trong vật liệu bằng sóng siêu âm tần số cao, đo chiều dày thành ống và bồn chứa.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/49/Ultrasonidos.jpg',
   },
   {
     id: 2,
     icon: 'rt',
     title: 'Chụp ảnh phóng xạ (RT)',
     description: 'Sử dụng tia X hoặc tia Gamma để phát hiện khuyết tật hàn, rỗ khí, nứt bên trong kết cấu kim loại.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/42/Cologne_Germany_Examination-of-fitting-xray-01.jpg',
   },
   {
     id: 3,
     icon: 'mt',
     title: 'Kiểm tra từ tính (MT)',
     description: 'Phát hiện các khuyết tật bề mặt và gần bề mặt trên vật liệu sắt từ bằng phương pháp từ hóa.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/MPI_crack_indication.png',
   },
   {
     id: 4,
     icon: 'pt',
     title: 'Kiểm tra thẩm thấu (PT)',
     description: 'Phát hiện khuyết tật bề mặt mở trên mọi loại vật liệu bằng chất lỏng thẩm thấu và chất hiện.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/2/22/ENSAYO_DE_LIQUIDOS_PENETRANTES.jpg',
   },
   {
     id: 5,
     icon: 'vi',
     title: 'Kiểm tra bằng mắt (VT)',
     description: 'Kiểm tra trực quan bề mặt mối hàn, kết cấu theo tiêu chuẩn AWS, ASME, API.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/US_Navy_101220-N-7981E-121_Aviation_Structural_Mechanic_1st_Class_Charles_Martens%2C_a_non-destructive_inspection_%28NDI%29_technician.jpg',
   },
   {
     id: 6,
     icon: 'pmi',
     title: 'Phân tích vật liệu (PMI)',
     description: 'Xác định thành phần hóa học vật liệu tại hiện trường bằng thiết bị XRF/OES.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Handheld_RXF_analyzer_gun.jpg',
   },
 ]
 
@@ -112,12 +118,12 @@ export const projects = [
 ]
 
 export const partners = [
-  { name: 'ABS', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/American_Bureau_of_Shipping_logo.svg/200px-American_Bureau_of_Shipping_logo.svg.png' },
-  { name: 'Bureau Veritas', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Bureau_Veritas_logo.svg/200px-Bureau_Veritas_logo.svg.png' },
-  { name: 'ClassNK', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/ClassNK_logo.svg/200px-ClassNK_logo.svg.png' },
-  { name: 'DNV', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/DNV_logo.svg/200px-DNV_logo.svg.png' },
-  { name: 'Korean Register', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Korean_Register_logo.svg/200px-Korean_Register_logo.svg.png' },
-  { name: 'Vietnam Register', logo: 'https://upload.wikimedia.org/wikipedia/vi/thumb/5/5c/Vietnam_Register_logo.svg/200px-Vietnam_Register_logo.svg.png' },
+  { name: 'ABS', logo: 'https://ww2.eagle.org/content/dam/eagle/logos/abs_logo@1x.png' },
+  { name: 'Bureau Veritas', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Bureau_Veritas.svg/250px-Bureau_Veritas.svg.png' },
+  { name: 'ClassNK', logo: 'https://cdn.brandfetch.io/idmcwFVOPS/theme/dark/logo.svg' },
+  { name: 'DNV', logo: 'https://www.dnv.com/assets/images/DNV_logo_RGB_tcm8-197625.png' },
+  { name: 'Korean Register', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Korean_Register.png' },
+  { name: 'Vietnam Register', logo: 'https://www.vr.org.vn/Publishing_Resources/web/images/logo_EN.png' },
 ]
 
 export const whyChooseUs = [

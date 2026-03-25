@@ -129,13 +129,13 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div className={`bg-gray-50 rounded-2xl p-12 flex items-center justify-center min-h-[300px] ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 text-primary">
-                      <ServiceIcon type={service.icon} />
-                    </div>
-                    <p className="text-gray-500 font-medium">{service.title}</p>
-                  </div>
+                <div className={`rounded-2xl overflow-hidden min-h-[300px] ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover rounded-2xl shadow-lg"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             ))}
