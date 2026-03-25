@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { companyInfo, navLinks } from '../data/siteData'
 
 export default function Footer() {
@@ -7,12 +8,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
+            <Link to="/" className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">α</span>
               </div>
               <span className="font-bold text-xl">Alpha NDT</span>
-            </div>
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               {companyInfo.fullName} — Đối tác tin cậy trong kiểm tra không phá hủy và kiểm định công nghiệp.
             </p>
@@ -36,10 +37,10 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-6">Menu</h4>
             <ul className="space-y-3">
               {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} className="text-gray-400 hover:text-white transition-colors text-sm">
+                <li key={link.path}>
+                  <Link to={link.path} className="text-gray-400 hover:text-white transition-colors text-sm">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -51,9 +52,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {['Kiểm tra siêu âm (UT)', 'Chụp phóng xạ (RT)', 'Kiểm tra từ tính (MT)', 'Kiểm tra thẩm thấu (PT)', 'Phân tích vật liệu (PMI)'].map((s) => (
                 <li key={s}>
-                  <a href="#services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link to="/services" className="text-gray-400 hover:text-white transition-colors text-sm">
                     {s}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

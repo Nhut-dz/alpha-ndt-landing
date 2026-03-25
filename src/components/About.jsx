@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function About() {
   return (
     <section id="about" className="py-20 lg:py-28 bg-white">
@@ -53,15 +55,15 @@ export default function About() {
               ))}
             </div>
 
-            <a
-              href="#services"
+            <Link
+              to="/services"
               className="inline-flex items-center text-secondary font-semibold hover:text-blue-700 transition-colors"
             >
               Tìm hiểu thêm về dịch vụ
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

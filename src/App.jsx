@@ -1,33 +1,36 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Services from './components/Services'
-import Portfolio from './components/Portfolio'
-import Partners from './components/Partners'
-import WhyChooseUs from './components/WhyChooseUs'
-import Blog from './components/Blog'
-import Careers from './components/Careers'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import ScrollToTopOnNav from './components/ScrollToTopOnNav'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import ServicesPage from './pages/ServicesPage'
+import PortfolioPage from './pages/PortfolioPage'
+import BlogPage from './pages/BlogPage'
+import CareersPage from './pages/CareersPage'
+import ContactPage from './pages/ContactPage'
 
 export default function App() {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Portfolio />
-        <Partners />
-        <WhyChooseUs />
-        <Blog />
-        <Careers />
-        <Contact />
-      </main>
-      <Footer />
-      <ScrollToTop />
-    </div>
+    <BrowserRouter>
+      <ScrollToTopOnNav />
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/careers" element={<CareersPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </BrowserRouter>
   )
 }

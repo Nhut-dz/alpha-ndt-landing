@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { navLinks } from '../data/siteData'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const location = useLocation()
+
+  // On non-home pages, always show solid header
+  const isHome = location.pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
@@ -11,48 +16,52 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const showSolid = isScrolled || !isHome
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        showSolid ? 'bg-white shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">α</span>
             </div>
-            <div>
-              <span className={`font-bold text-xl tracking-tight ${isScrolled ? 'text-primary' : 'text-white'}`}>
-                Alpha NDT
-              </span>
-            </div>
-          </a>
+            <span className={`font-bold text-xl tracking-tight ${showSolid ? 'text-primary' : 'text-white'}`}>
+              Alpha NDT
+            </span>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-secondary ${
-                  isScrolled ? 'text-gray-700' : 'text-white/90 hover:text-white'
-                }`}
+              <NavLink
+                key={link.path}
+                to={link.path}
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors ${
+                    isActive
+                      ? showSolid ? 'text-secondary' : 'text-white'
+                      : showSolid ? 'text-gray-700 hover:text-secondary' : 'text-white/80 hover:text-white'
+                  }`
+                }
               >
                 {link.label}
-              </a>
+              </NavLink>
             ))}
           </nav>
 
           {/* CTA Button */}
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="hidden lg:inline-flex items-center px-6 py-2.5 bg-secondary text-white text-sm font-semibold rounded-lg hover:bg-blue-600 transition-colors"
           >
             Liên hệ ngay
-          </a>
+          </Link>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -61,9 +70,9 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             <div className="space-y-1.5">
-              <span className={`block w-6 h-0.5 transition-all ${isScrolled ? 'bg-gray-800' : 'bg-white'} ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`block w-6 h-0.5 transition-all ${isScrolled ? 'bg-gray-800' : 'bg-white'} ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
-              <span className={`block w-6 h-0.5 transition-all ${isScrolled ? 'bg-gray-800' : 'bg-white'} ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              <span className={`block w-6 h-0.5 transition-all ${showSolid ? 'bg-gray-800' : 'bg-white'} ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`block w-6 h-0.5 transition-all ${showSolid ? 'bg-gray-800' : 'bg-white'} ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-6 h-0.5 transition-all ${showSolid ? 'bg-gray-800' : 'bg-white'} ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
             </div>
           </button>
         </div>
@@ -77,22 +86,26 @@ export default function Header() {
       >
         <nav className="px-4 py-4 space-y-2">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-secondary rounded-lg transition-colors"
+            <NavLink
+              key={link.path}
+              to={link.path}
+              className={({ isActive }) =>
+                `block px-4 py-3 rounded-lg transition-colors ${
+                  isActive ? 'bg-secondary/10 text-secondary font-medium' : 'text-gray-700 hover:bg-gray-50'
+                }`
+              }
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="block mx-4 mt-4 px-6 py-3 bg-secondary text-white text-center font-semibold rounded-lg"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Liên hệ ngay
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

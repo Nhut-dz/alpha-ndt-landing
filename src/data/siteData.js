@@ -16,13 +16,13 @@ export const companyInfo = {
 }
 
 export const navLinks = [
-  { label: 'Trang chủ', href: '#home' },
-  { label: 'Giới thiệu', href: '#about' },
-  { label: 'Dịch vụ', href: '#services' },
-  { label: 'Dự án', href: '#portfolio' },
-  { label: 'Tin tức', href: '#blog' },
-  { label: 'Tuyển dụng', href: '#careers' },
-  { label: 'Liên hệ', href: '#contact' },
+  { label: 'Trang chủ', path: '/' },
+  { label: 'Giới thiệu', path: '/about' },
+  { label: 'Dịch vụ', path: '/services' },
+  { label: 'Dự án', path: '/portfolio' },
+  { label: 'Tin tức', path: '/blog' },
+  { label: 'Tuyển dụng', path: '/careers' },
+  { label: 'Liên hệ', path: '/contact' },
 ]
 
 export const services = [
